@@ -15,6 +15,21 @@ export interface Category {
   id: string;
   name: string;
   description: string | null;
+  path: string;
+}
+
+export interface BoardList {
+  id: string;
+  name: string;
+  description: string;
+  topic_count: number;
+  answer_count: number;
+  answer_current: {
+    id: string;
+    date: Date;
+    author: string;
+  };
+  path: string;
 }
 
 export interface Post {
@@ -188,41 +203,117 @@ export const mockCategories: Category[] = [
     id: "cat1",
     name: "ผลบอลย้อนหลัง",
     description: "ผลบอลย้อนหลัง",
+    path: "/history-score",
   },
   {
     id: "cat2",
     name: "โปรแกรมถ่ายทอดสด",
     description: "โปรแกรมถ่ายทอดสด",
+    path: "/live-stream",
   },
   {
     id: "cat3",
     name: "โปรแกรมถ่ายบอลล่วงหน้า",
     description: "โปรแกรมถ่ายบอลล่วงหน้า",
+    path: "/live-stream-next",
   },
   {
     id: "cat4",
     name: "สรุปผลย้อนหลัง",
     description: "สรุปผลย้อนหลัง",
+    path: "/history-score-summary",
   },
   {
     id: "cat5",
     name: "คอลัมป์+สกู๊ป",
     description: "คอลัมป์+สกู๊ป",
+    path: "/forum",
   },
   {
     id: "cat6",
     name: "เว็บบอร์ด",
     description: "เว็บบอร์ด",
+    path: "/board",
   },
   {
     id: "cat7",
     name: "ประวัติ soccersex",
     description: "ประวัติ soccersex",
+    path: "/history-soccersex",
   },
   {
     id: "cat8",
     name: "ติดต่อโฆษณา",
     description: "ติดต่อโฆษณา",
+    path: "/contact-ad",
+  },
+];
+
+export const mockBoardList: BoardList[] = [
+  {
+    id: "board1",
+    name: "ข่าวประจำวัน",
+    description: "อ่านและแสดงความเห็นกับข่าวประจำวัน",
+    topic_count: 10,
+    answer_count: 25,
+    answer_current: {
+      id: "answer1",
+      date: new Date("2025-06-20T10:30:00Z"),
+      author: "ประยุทธ์ จันทร์โอชา",
+    },
+    path: "/board/today-news",
+  },
+  {
+    id: "board2",
+    name: "บอลนอก",
+    description: "แลกเปลี่ยนและแสดงความคิดเห็น วิพากษ์ประเด็นร้อน ชอนไชเรื่องกังขาเฉพาะเรื่องบอลเท่านั้น",
+    topic_count: 8,
+    answer_count: 18,
+    answer_current: {
+      id: "answer2",
+      date: new Date("2025-06-21T08:45:00Z"),
+      author: "ทักษิณ ชินวัตร",
+    },
+    path: "/board/global-news",
+  },
+  {
+    id: "board3",
+    name: "บอลไทย+เอเชีย",
+    description: "พูดคุยถึงเรื่องข่าวสารบอลไทยและเชีย สำหรับผู้คลั่งไคล้บอลไทยและเอเชียเข้าสายเลือด",
+    topic_count: 8,
+    answer_count: 18,
+    answer_current: {
+      id: "answer3",
+      date: new Date("2025-06-22T09:15:00Z"),
+      author: "สุริยา สุริยะกุล",
+    },
+    path: "/board/domestic-news",
+  },
+  {
+    id: "board4",
+    name: "บอร์ดวาไรตี้",
+    description: "นำเสนอสาระน่ารู้ต่างๆที่ไม่เกี่ยวข้องกับฟุตบอลแต่ต้องไม่หมิ่นเบื้องสูงหรือทำลายชื่อเสียงบุคคลใดๆ",
+    topic_count: 8,
+    answer_count: 18,
+    answer_current: {
+      id: "answer4",
+      date: new Date("2025-06-23T10:30:00Z"),
+      author: "สุริยา สุริยะกุล",
+    },
+    path: "/board/future-news",
+  },
+  {
+    id: "board5",
+    name: "บอร์ดฝากร้าน",
+    description: "เป็นบอร์ดที่ให้สมาชิกโปรโมทสินค้าและบริการของตัวเองไม่ว่าจะเป็นหน้าร้าน facebook, IG, tiktok และอื่นๆหรือรับสมัครงาน,หาดี้,รับซื้อสินค้าที่ต้องการแต่ทุกๆอย่างต้องไม่ผิดกฏหมายเช่นการพนัน, ยาเสพติด, ของละเมิดลิขสิทธิ์หรือของเถื่อนที่กฏหมายไม่อนุญาต",
+    topic_count: 8,
+    answer_count: 18,
+    answer_current: {
+      id: "answer5",
+      date: new Date("2025-06-24T10:30:00Z"),
+      author: "สุริยา สุริยะกุล",
+    },
+    path: "/board/store",
   },
 ];
 
