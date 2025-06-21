@@ -1,7 +1,10 @@
+import PostListSkeleton from "@/components/loader/PostListSkeleton";
+import { Suspense } from "react";
+
 export default function Home() {
   return (
     <div>
-      <h1 className="text-sm text-red-500">Hello</h1>
+      <Suspense fallback={<PostListSkeleton />}>PostList</Suspense>
     </div>
   );
 }
