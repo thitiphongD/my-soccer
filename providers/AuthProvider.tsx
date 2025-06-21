@@ -1,10 +1,19 @@
+"use client";
+
 import {
   getPrisonExpiry,
   getPrisonWarning,
   isPrisonUser,
 } from "@/lib/prison-ranks";
 import { mockUsers } from "@/mock-data/user.mock";
-import { createContext, ReactNode, useEffect, useMemo, useState } from "react";
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 
 export interface User {
   id: string;
@@ -19,6 +28,7 @@ interface AuthContextType {
   loginProvider: (
     email: string,
     password: string
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   ) => Promise<{ success: boolean; error?: string; prisonInfo?: any }>;
   logoutProvider: () => void;
   registerProvider: (
@@ -59,6 +69,7 @@ export default function AuthProvider({
   const loginProvider = async (
     email: string,
     password: string
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   ): Promise<{ success: boolean; error?: string; prisonInfo?: any }> => {
     setAuthLoading(true);
 
@@ -171,4 +182,12 @@ export default function AuthProvider({
   return (
     <AuthContext.Provider value={ContextAuth}>{children}</AuthContext.Provider>
   );
+}
+
+export function useAuthProvider() {
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error("useAuthProvider must be used within an AuthProvider");
+  }
+  return context;
 }

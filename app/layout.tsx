@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/ThemeProvider";
-import Navbar from "@/components/layouts/Navbar";
-import { Skeleton } from "@/components/ui/skeleton";
 import { Suspense } from "react";
+import AuthProvider from "@/providers/AuthProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,21 +31,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider>
-          <Navbar />
-          <main className="container mx-auto p-2">
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
-              <aside className="lg:col-span-1">
-                <Suspense fallback={<Skeleton className="h-64 w-full" />}>
-                  Category filter
-                </Suspense>
-              </aside>
-              <div className="lg:col-span-3">
-                <Suspense fallback={<div>Loading!!!!!!.....</div>}>
-                  {children}
-                </Suspense>
-              </div>
-            </div>
-          </main>
+          <AuthProvider>
+            <Suspense fallback={<div>Loading!!!!!!.....</div>}>
+              {children}
+            </Suspense>
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>
