@@ -15,7 +15,7 @@ export default function CategoryFilter() {
           key={category.id}
           onClick={() => setSelectedCategory(category.id)}
           className={`
-          block w-full text-left rounded-md transition-colors cursor-pointer p-2 my-1
+          block w-full text-left rounded-md transition-colors cursor-pointer p-2 my-2
           ${selectedCategory === category.id ? "bg-primary" : "hover:bg-muted"}
           `}
         >
