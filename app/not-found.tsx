@@ -2,16 +2,16 @@ import Link from "next/link";
 
 export default function notFound() {
   return (
-    <div className="flex h-90 items-center justify-center">
+    <div className="flex h-screen items-center justify-center">
       <div className="text-center">
         <h1 className="mb-4 text-7xl tracking-tight font-extrabold lg:text-9xl text-primary">
           404
         </h1>
         <p className="mb-4 text-3xl tracking-tight font-bold md:text-4xl">
-          Something's missing.
+          Something&apos;s missing.
         </p>
         <p className="mb-4 text-lg font-light text-muted-foreground">
-          Sorry, we can't find that page. You'll find lots to explore on the
+          Sorry, we can&apos;t find that page. You&apos;ll find lots to explore on the
           home page.
         </p>
 
