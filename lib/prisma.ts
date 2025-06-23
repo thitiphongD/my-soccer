@@ -65,6 +65,7 @@ export interface Post {
   updatedAt: Date;
   source?: string[];
   major: MAJOR_ENUM;
+  path: string;
 }
 
 export interface Comment {
@@ -384,6 +385,7 @@ export const mockPosts: Post[] = [
     createdAt: new Date("2024-01-05"),
     updatedAt: new Date("2024-01-05"),
     major: MAJOR_ENUM.PREMIER_LEAGUE,
+    path: "/board/global-news",
   },
   {
     id: "post2",
@@ -405,6 +407,7 @@ export const mockPosts: Post[] = [
     createdAt: new Date("2024-01-06"),
     updatedAt: new Date("2024-01-06"),
     major: MAJOR_ENUM.LA_LIGA,
+    path: "/board/global-news",
   },
   {
     id: "post7",
@@ -426,6 +429,7 @@ export const mockPosts: Post[] = [
       "https://www.instagram.com/p/DLNmYRVNiyc/?utm_source=ig_embed&ig_rid=792743de-d527-450f-9c7d-04ab00c26b06",
     ],
     major: MAJOR_ENUM.PREMIER_LEAGUE,
+    path: "/board/global-news",
   },
   {
     id: "post8",
@@ -447,6 +451,7 @@ export const mockPosts: Post[] = [
     images: ["/images/Gt4vEHEXQAALcom.jpg"],
     likes: 3,
     major: MAJOR_ENUM.PREMIER_LEAGUE,
+    path: "/board/global-news",
   },
   {
     id: "post9",
@@ -466,6 +471,7 @@ export const mockPosts: Post[] = [
     images: ["/images/obi_mikel.avif"],
     likes: 29,
     major: MAJOR_ENUM.PREMIER_LEAGUE,
+    path: "/board/global-news",
   },
   {
     id: "post10",
@@ -486,6 +492,7 @@ export const mockPosts: Post[] = [
     images: ["/images/0_Nicolas-Jackson.jpg"],
     likes: 47,
     major: MAJOR_ENUM.SERIE_A,
+    path: "/board/global-news",
   },
   {
     id: "post11",
@@ -507,6 +514,7 @@ export const mockPosts: Post[] = [
     images: ["/images/99626301-0-image-m-5_1750657861056.avif"],
     likes: 52,
     major: MAJOR_ENUM.FRANCE_LEAGUE_1,
+    path: "/board/global-news",
   },
   {
     id: "post12",
@@ -533,6 +541,7 @@ export const mockPosts: Post[] = [
     images: ["/images/IMG_2053.jpg", "/images/IMG_2055.jpg"],
     likes: 52,
     major: MAJOR_ENUM.THAI_LEAGUE,
+    path: "/board/asia-news",
   },
 ];
 

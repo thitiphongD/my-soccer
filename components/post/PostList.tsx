@@ -14,6 +14,7 @@ type PostWithRelations = {
   likes: number;
   createdAt: Date;
   major: MAJOR_ENUM;
+  path: string;
   author: {
     id: string;
     name: string | null;

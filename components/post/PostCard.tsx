@@ -6,6 +6,7 @@ import { Badge } from "../ui/badge";
 import { ImageIcon, MessageCircle, User } from "lucide-react";
 import { MAJOR_ENUM } from "@/lib/prisma";
 import { motion } from "framer-motion";
+import { createAbsoluteUrl } from "@/lib/utils";
 
 interface PostCardProps {
   readonly post: {
@@ -13,6 +14,7 @@ interface PostCardProps {
     title: string;
     content: string;
     images?: string[];
+    path: string;
     authorId: string;
     likes: number;
     createdAt: Date;
@@ -69,7 +71,7 @@ export default function PostCard({
         <div className="flex items-center justify-between">
           <div className="flex flex-row gap-4">
             <Link
-              href={`/posts/${post.id}`}
+              href={createAbsoluteUrl(`/${post.path}/${post.id}`)}
               className="text-lg font-semibold hover:text-primary transition-colors"
             >
               {post.title}
@@ -90,11 +92,7 @@ export default function PostCard({
 
   if (isFirstCard) {
     return (
-      <motion.div
-        variants={cardVariants}
-        initial="hidden"
-        animate="visible"
-      >
+      <motion.div variants={cardVariants} initial="hidden" animate="visible">
         <Card className="hover:shadow-md transition-shadow h-fit">
           <CardHeader>
             <div className="flex gap-4">
@@ -124,7 +122,7 @@ export default function PostCard({
               >
                 <div className="flex items-start justify-between mb-2">
                   <Link
-                    href={`/posts/${post.id}`}
+                    href={createAbsoluteUrl(`/${post.path}/${post.id}`)}
                     className="text-xl font-bold hover:text-primary transition-colors"
                   >
                     {post.title}
@@ -155,7 +153,7 @@ export default function PostCard({
                     <div className="flex items-center gap-2">
                       <User className="h-4 w-4" />
                       <Link
-                        href={`/profile/${post.author.id}`}
+                        href={createAbsoluteUrl(`/profile/${post.author.id}`)}
                         className="hover:text-primary transition-colors"
                       >
                         {post.author.name ?? post.author.email}
@@ -185,11 +183,7 @@ export default function PostCard({
   }
 
   return (
-    <motion.div
-      variants={cardVariants}
-      initial="hidden"
-      animate="visible"
-    >
+    <motion.div variants={cardVariants} initial="hidden" animate="visible">
       <Card className="hover:shadow-md transition-shadow h-fit">
         <CardHeader className="pb-3">
           <div className="flex gap-2">
@@ -217,7 +211,7 @@ export default function PostCard({
             >
               <div className="flex items-start justify-between">
                 <Link
-                  href={`/posts/${post.id}`}
+                  href={createAbsoluteUrl(`/${post.path}/${post.id}`)}
                   className="text-lg font-semibold hover:text-primary transition-colors"
                 >
                   {post.title.substring(0, 30)}...
@@ -244,7 +238,7 @@ export default function PostCard({
                 <div className="flex items-center gap-1">
                   <User className="h-3 w-3 text-muted-foreground" />
                   <Link
-                    href={`/profile/${post.author.id}`}
+                    href={createAbsoluteUrl(`/profile/${post.author.id}`)}
                     className="hover:text-primary transition-colors text-xs truncate max-w-20 text-muted-foreground"
                   >
                     {post.author.name ?? post.author.email}
