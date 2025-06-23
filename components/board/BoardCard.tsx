@@ -99,7 +99,7 @@ export default function BoardCard({ board, isGrid = true }: BoardCardProps) {
             <div
               className={`
                 ${isGrid ? "w-8 h-8" : "w-6 h-6"}
-                rounded-full flex items-center justify-center text-xs font-medium
+                rounded-full flex items-center justify-center text-sm font-bold
                 bg-gradient-to-r from-primary/80 to-primary text-primary-foreground
               `}
             >
