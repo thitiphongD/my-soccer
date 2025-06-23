@@ -334,7 +334,7 @@ export const mockBoardList: BoardList[] = [
       date: new Date("2025-06-22T09:15:00Z"),
       author: "สุริยา สุริยะกุล",
     },
-    path: "/board/domestic-news",
+    path: "/board/asia-news",
   },
   {
     id: "board4",
@@ -348,7 +348,7 @@ export const mockBoardList: BoardList[] = [
       date: new Date("2025-06-23T10:30:00Z"),
       author: "สุริยา สุริยะกุล",
     },
-    path: "/board/future-news",
+    path: "/board/variety",
   },
   {
     id: "board5",

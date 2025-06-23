@@ -5,6 +5,7 @@ import { format } from "date-fns";
 import { ChevronRight, Clock, MessageCircle, Users } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 interface BoardCardProps {
   readonly board: BoardList;
@@ -15,6 +16,8 @@ export default function BoardCard({ board, isGrid = true }: BoardCardProps) {
   const [hoveredBoard, setHoveredBoard] = useState<string | null>(null);
 
   return (
+    <Link href={board.path}>
+
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
@@ -135,7 +138,8 @@ export default function BoardCard({ board, isGrid = true }: BoardCardProps) {
       {/* Hover effect */}
       {hoveredBoard === board.id && (
         <div className="absolute inset-0 transition-opacity duration-300 rounded-md bg-gradient-to-r from-secondary/5 to-primary/8" />
-      )}
-    </motion.div>
+        )}
+      </motion.div>
+    </Link>
   );
 }
