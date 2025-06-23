@@ -59,6 +59,7 @@ export interface Post {
   content: string;
   authorId: string;
   categoryId: string | null;
+  imageTitle: string;
   images?: string[];
   likes: number; // Add likes to posts
   createdAt: Date;
@@ -380,7 +381,7 @@ export const mockPosts: Post[] = [
               "ครึ่งหลังเราพยายามเพรสซิ่งสูงขึ้นเล็กน้อย เราเริ่มต้นได้ดี แต่ข้อแตกต่าง อาจเป็นเรื่องความกระหายชัยชนะที่คู่แข่งมีมากกว่าเรา แล้วหลังจากเราโดนใบแดง ผมก็คิดว่าเกมมันจบแล้ว"`,
     authorId: "admin1",
     categoryId: "cat4",
-    images: ["/images/FzWi1kl.png"],
+    imageTitle: "/images/FzWi1kl.png",
     likes: 25,
     createdAt: new Date("2024-01-05"),
     updatedAt: new Date("2024-01-05"),
@@ -402,7 +403,8 @@ export const mockPosts: Post[] = [
     `,
     authorId: "user1",
     categoryId: "cat2",
-    images: ["/images/FIzbAH7.png", "/images/FIzbkfR.png"],
+    imageTitle: "/images/FIzbAH7.png",
+    images: ["/images/FIzbkfR.png"],
     likes: 42,
     createdAt: new Date("2024-01-06"),
     updatedAt: new Date("2024-01-06"),
@@ -423,7 +425,7 @@ export const mockPosts: Post[] = [
     categoryId: "cat6",
     createdAt: new Date("2024-01-11"),
     updatedAt: new Date("2024-01-11"),
-    images: ["/images/FInlp4f.png"],
+    imageTitle: "/images/FInlp4f.png",
     likes: 55,
     source: [
       "https://www.instagram.com/p/DLNmYRVNiyc/?utm_source=ig_embed&ig_rid=792743de-d527-450f-9c7d-04ab00c26b06",
@@ -448,7 +450,7 @@ export const mockPosts: Post[] = [
     categoryId: "cat5",
     createdAt: new Date("2024-01-12"),
     updatedAt: new Date("2024-01-12"),
-    images: ["/images/Gt4vEHEXQAALcom.jpg"],
+    imageTitle: "/images/Gt4vEHEXQAALcom.jpg",
     likes: 3,
     major: MAJOR_ENUM.PREMIER_LEAGUE,
     path: "/board/global-news",
@@ -464,11 +466,11 @@ export const mockPosts: Post[] = [
       "แต่ผมไม่เห็นอะไรแบบนั้นเลยที่นี่ ผมไม่เห็นบรรดาผู้นำ ผมเห็นแค่พวกนักเตะที่กำลังก่อความผิดพลาด"
       "จากนั้นนิโคลัส แจ็คสัน ก็ลงมาแล้วโดนใบแดง มันยิ่งทำให้จากย่ำแย่เป็นเลวร้ายเลยแหล่ะ"
       `,
-    authorId: "user6",
+    authorId: "user4",
     categoryId: "cat6",
     createdAt: new Date("2024-01-13"),
     updatedAt: new Date("2024-01-13"),
-    images: ["/images/obi_mikel.avif"],
+    imageTitle: "/images/obi_mikel.avif",
     likes: 29,
     major: MAJOR_ENUM.PREMIER_LEAGUE,
     path: "/board/global-news",
@@ -485,11 +487,11 @@ export const mockPosts: Post[] = [
       กลับกัน นาโปลี หมายตา โลเรนโซ่ ลุคก้า และ ดาร์วิน นูนเญซ ไว้มากกว่าแต่พวกเขายังขอข้อมูลเกี่ยวกับอนาคต แจ๊คสัน ผ่านทางตัวแทนนักเตะ
       รายงานก่อนหน้านี้ระบุว่า นาโปลี พร้อมที่จะยื่นข้อเสนอมากกว่า 40 ล้านยูโรเพื่อแลกกับ นูนเญซ ที่เป็นเป้าหมายหลักสำหรับการเติมแดนหน้า
       `,
-    authorId: "user7",
+    authorId: "user3",
     categoryId: "cat2",
     createdAt: new Date("2024-01-14"),
     updatedAt: new Date("2024-01-14"),
-    images: ["/images/0_Nicolas-Jackson.jpg"],
+    imageTitle: "/images/0_Nicolas-Jackson.jpg",
     likes: 47,
     major: MAJOR_ENUM.SERIE_A,
     path: "/board/global-news",
@@ -507,11 +509,11 @@ export const mockPosts: Post[] = [
     เชื่อกันว่าทั้งสองฝ่ายได้หารือกันมาหลายวันแล้ว ก่อนที่จะตกลงเรื่องการเงินกันได้ในที่สุดเมื่อวันอาทิตย์
     รายงานยังระบุเพิ่มเติมด้วยว่า ป็อกบา ได้เดินทางไปพบกับประธานสโมสรในช่วงที่ผ่านมา และได้เริ่มวางแผนชีวิตและการดำเนินการต่างๆ ในการย้ายทีม ซึ่งรวมถึงรายละเอียดต่างๆ เช่น การหาคนขับรถคนใหม่ สถานที่พักอาศัย และมาตรการรักษาความปลอดภัยที่เขาจะจัดเตรียมไว้
     `,
-    authorId: "user8",
+    authorId: "user5",
     categoryId: "cat3",
     createdAt: new Date("2024-01-15"),
     updatedAt: new Date("2024-01-15"),
-    images: ["/images/99626301-0-image-m-5_1750657861056.avif"],
+    imageTitle: "/images/99626301-0-image-m-5_1750657861056.avif",
     likes: 52,
     major: MAJOR_ENUM.FRANCE_LEAGUE_1,
     path: "/board/global-news",
@@ -534,11 +536,12 @@ export const mockPosts: Post[] = [
 
 สำหรับ ฟุตบอลหญิงทีมชาติไทย อยู่ในกลุ่ม บี ร่วมกับ อินเดีย, มองโกเลีย, ติมอร์ เลสเต และ อิรัก ซึ่งรายการนี้จะแข่งแบบพบกันหมด เพื่อนำทีมแชมป์กลุ่มทั้งหมด 8 กลุ่ม มารวมกับอีก 4 ชาติที่ยืนรออยู่แล้ว ได้แก่ ออสเตรเลีย (เจ้าภาพ), จีน (แชมป์เก่า), เกาหลีใต้ (รองแชมป์เก่า) และ ญี่ปุ่น (อันดับ 3 ครั้งที่แล้ว) เพื่อเข้าไปเล่นรอบสุดท้าย ที่ประเทศออสเตรเลีย ต่อไป
     `,
-    authorId: "user9",
+    authorId: "user2",
     categoryId: "cat4",
     createdAt: new Date("2024-01-16"),
     updatedAt: new Date("2024-01-16"),
-    images: ["/images/IMG_2053.jpg", "/images/IMG_2055.jpg"],
+    imageTitle: "/images/IMG_2053.jpg",
+    images: ["/images/IMG_2055.jpg"],
     likes: 52,
     major: MAJOR_ENUM.THAI_LEAGUE,
     path: "/board/asia-news",

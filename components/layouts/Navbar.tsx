@@ -14,6 +14,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Heart, LogOut, User } from "lucide-react";
+import { Input } from "../ui/input";
 
 export default function Navbar() {
   const { user, logoutProvider } = useAuthProvider();
@@ -26,6 +27,7 @@ export default function Navbar() {
           </Link>
           <div className="flex items-center gap-4">
             <div className="flex gap-2">
+              <Input type="text" placeholder="Search" className="w-72 "   />
               <ThemeToggle />
               {user ? (
                 <>

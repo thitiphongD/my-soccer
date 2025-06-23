@@ -106,9 +106,9 @@ export default function PostCard({
                   <Image
                     src={post.images[0] || "/placeholder.svg"}
                     alt={`${post.title} preview`}
-                    width={200}
-                    height={200}
-                    className="w-48 h-36 md:w-72 md:h-48 object-cover rounded border"
+                    width={400}
+                    height={400}
+                    className="w-48 h-36 md:w-[600px] md:h-[400px] rounded border"
                   />
                 </motion.div>
               )}
@@ -139,7 +139,7 @@ export default function PostCard({
                 </div>
 
                 <p className="text-sm text-muted-foreground line-clamp-4 mb-4">
-                  {post.content.substring(0, 300)}...
+                  {post.content.substring(0, 1000)}...
                 </p>
 
                 {/* Stats for first card */}
@@ -197,8 +197,8 @@ export default function PostCard({
                 <Image
                   src={post.images[0] || "/placeholder.svg"}
                   alt={`${post.title} preview`}
-                  width={96}
-                  height={96}
+                  width={150}
+                  height={150}
                   className="w-32 h-32 object-cover rounded border"
                 />
               </motion.div>

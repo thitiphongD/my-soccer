@@ -24,7 +24,7 @@ export const mockUsers = [
     totalLikes: 150,
   },
   {
-    id: "3",
+    id: "user3",
     email: "trouble@example.com",
     name: "Trouble Maker",
     password: "user123",
@@ -32,7 +32,7 @@ export const mockUsers = [
     totalLikes: -5,
   },
   {
-    id: "4",
+    id: "user4",
     email: "banned@example.com",
     name: "Banned User",
     password: "user123",
@@ -40,7 +40,7 @@ export const mockUsers = [
     totalLikes: 15,
   },
   {
-    id: "5",
+    id: "user5",
     email: "lisa@example.com",
     name: "Lisa Garcia",
     password: "user123",
