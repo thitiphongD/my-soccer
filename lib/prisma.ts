@@ -43,6 +43,7 @@ export interface Post {
   likes: number; // Add likes to posts
   createdAt: Date;
   updatedAt: Date;
+  source?: string[];
 }
 
 export interface Comment {
@@ -348,128 +349,115 @@ export const mockBoardList: BoardList[] = [
 export const mockPosts: Post[] = [
   {
     id: "post1",
-    title: "Welcome to our Web Board!",
-    content:
-      "This is the first post on our new web board platform. Feel free to explore and create your own posts!",
+    title: "เนโต้' ยันได้ร่วมสโมสรโลกดีกว่าพักร้อน",
+    content: `เปโดร เนโต้ ปีก เชลซี ยืนยันสำหรับเขาการเข้าร่วมสโมสรโลก คือเรื่องดีกว่าการได้พักร้อน แต่ยอมรับทีมกระหายชัยชนะน้อยกว่าคู่แข่ง จนแพ้ ฟลาเมงโก้ 3-1 ในนัดล่าสุด ทัวร์นาเมนต์ช่วงกลางปีที่สหรัฐอเมริกา เจอเสียงวิจารณ์ว่าเบียดบังเวลาพักจนผู้เล่นบางรายไม่ต้องการเข้าร่วม แต่ เนโต้ ไม่คิดแบบนั้น
+              "แน่นอน 100 เปอร์เซนต์" แข้งโปรตุเกสวัย 25 ปี ตอบคำถาม อยากช่วยทีมร่วมรายการ มากกว่าไปพักร้อนที่ชายหาดหรือไม่
+              "เราต้องมีความสุขและขอบคุณที่ได้โอกาสเล่นรายการนี้ ผู้เล่นหลายคนอยากมาอยู่ในที่ของผม มากกว่าไปที่อื่น"
+              เนโต้ ยิงประตูให้ "สิงห์บลูส์" ประเดิมนัดแรกชนะ แอลเอ เอฟซี 2-0 และเกมล่าสุดเบิกอีกสกอร์เพื่อนำก่อน แต่โดน ฟลาเมงโก้ ทีมแกร่งลีกบราซิล พลิกแซง
+              "เรื่องผิดพลาดทั้งหลายเกิดขึ้นในครึ่งหลัง ครึ่งแรกคู่แข่งอาจครองบอลมากกว่า แต่เราเป็นฝ่ายสร้างโอกาส" เนโต้ กล่าวต่อ
+              "ครึ่งหลังเราพยายามเพรสซิ่งสูงขึ้นเล็กน้อย เราเริ่มต้นได้ดี แต่ข้อแตกต่าง อาจเป็นเรื่องความกระหายชัยชนะที่คู่แข่งมีมากกว่าเรา แล้วหลังจากเราโดนใบแดง ผมก็คิดว่าเกมมันจบแล้ว"`,
     authorId: "admin1",
     categoryId: "cat4",
-    images: ["/placeholder.svg?height=400&width=600"],
+    images: ["/images/FzWi1kl.png"],
     likes: 25,
     createdAt: new Date("2024-01-05"),
     updatedAt: new Date("2024-01-05"),
   },
   {
     id: "post2",
-    title: "Best practices for React development",
-    content:
-      "Here are some best practices I've learned over the years:\n\n1. Use functional components with hooks\n2. Keep components small and focused\n3. Use TypeScript for better type safety\n4. Implement proper error boundaries\n5. Optimize performance with React.memo when needed\n\nWhat are your favorite React tips?",
+    title: "ฟีฟ่าสอบ 'กัปตันปาชูก้า' เหยียดผิว 'รูดิเกอร์'",
+    content: `
+    ชาบี อลองโซ่ กุนซือ เรอัล มาดริด เปิดเผย ฟีฟ่า กำลังสอบสวนกรณี อันโตนิโอ รูดิเกอร์ กองหลังลูกทีมกล่าวหาว่า กุสตาโว่ คาบรัล กัปตันฝั่ง ปาชูก้า ใช้ถ้อยคำเหยียดผิว
+    สโมสรโลกรอบแบ่งกลุ่ม วันอาทิตย์ที่ผ่านมา "ราชัน" เสีย ราอูล อเซนซิโอ เพราะใบแดงตั้งแต่ 7 นาที ยังเอาชนะคู่แข่งจากเม็กซิโก 3-1
+    ช่วงทดเจ็บเกมที่เมือง ชาร์ล็อตต์ สหรัฐอเมริกา รูดิเกอร์ ดาวเตะเยอรมัน ปะทะคารมบางอย่างกับ คาบรัล แล้วร้องเรียนต่อผู้ตัดสินในสนาม
+    รามอน อาบัตติ เปาชาวบราซิล เป่าจบเกมโดยไม่แจกใบลงโทษฝั่งใด พร้อมส่งสัญลักษณ์มือ แจ้งใช้มาตรการป้องกันการเหยียดผิว
+    "รูดิเกอร์ บอกเราว่ามีบางอย่างเกิดขึ้น และกระบวนการที่ ฟีฟ่า กำหนดไว้ถูกบังคับใช้" อลองโซ่ เปิดเผยหลังแข่ง
+    "ตอนนี้พวกเขากำลังสอบสวนเหตุการณ์ เราเชื่อในสิ่งที่ รูดิเกอร์ บอก มันเป็นเรื่องที่รับไม่ได้"
+    คาบรัล แนวรับอาร์เจนไตน์วัย 39 ปี ชี้แจงบ้าง: "มันไม่มีอะไรที่เป็นการเหยียดผิว ผมแค่ใช้คำหยาบกับเขา แบบที่เราพูดกันใน อาร์เจนติน่า เท่านั้น"
+    "พวกเขาไม่สามารถลงโทษผมจากคำนั้น ทั้งเพื่อนร่วมทีมผม และผู้เล่นฝั่ง มาดริด ที่ยืนอยู่ข้างๆ ล้วนไม่มีใครได้ยินคำเหยียดผิว"
+    `,
     authorId: "user1",
     categoryId: "cat2",
-    images: [
-      "/placeholder.svg?height=300&width=500",
-      "/placeholder.svg?height=250&width=400",
-    ],
+    images: ["/images/FIzbAH7.png", "/images/FIzbkfR.png"],
     likes: 42,
     createdAt: new Date("2024-01-06"),
     updatedAt: new Date("2024-01-06"),
   },
   {
-    id: "post3",
-    title: "Need help with Next.js routing",
-    content:
-      "I'm having trouble understanding the new App Router in Next.js 13+. Can someone explain the difference between page.tsx and layout.tsx files?",
-    authorId: "user2",
-    categoryId: "cat3",
-    createdAt: new Date("2024-01-07"),
-    updatedAt: new Date("2024-01-07"),
-    images: [],
-    likes: 18,
-  },
-  {
-    id: "post4",
-    title: "JavaScript vs TypeScript: Which to choose?",
-    content:
-      "I'm starting a new project and wondering whether to use JavaScript or TypeScript. What are the pros and cons of each?",
-    authorId: "user3",
-    categoryId: "cat5",
-    createdAt: new Date("2024-01-08"),
-    updatedAt: new Date("2024-01-08"),
-    images: [],
-    likes: 31,
-  },
-  {
-    id: "post5",
-    title: "Favorite VS Code extensions for web development",
-    content:
-      "What are your must-have VS Code extensions for web development? Here are mine:\n\n- ES7+ React/Redux/React-Native snippets\n- Prettier\n- ESLint\n- Auto Rename Tag\n- Bracket Pair Colorizer\n\nShare yours!",
-    authorId: "user1",
-    categoryId: "cat2",
-    createdAt: new Date("2024-01-09"),
-    updatedAt: new Date("2024-01-09"),
-    images: [],
-    likes: 38,
-  },
-  {
-    id: "post6",
-    title: "How to stay motivated while learning to code?",
-    content:
-      "I've been learning web development for a few months now, but sometimes I feel overwhelmed. Any tips on staying motivated and not giving up?",
-    authorId: "user2",
-    categoryId: "cat1",
-    createdAt: new Date("2024-01-10"),
-    updatedAt: new Date("2024-01-10"),
-    images: [],
-    likes: 22,
-  },
-  {
     id: "post7",
-    title: "Modern CSS Grid vs Flexbox",
-    content:
-      "When should you use CSS Grid vs Flexbox? I've been struggling to understand when to use which layout method. Here's what I've learned so far...",
+    title: "หนุนหลังพี่แรช! 'การ์นาโช่' ใส่เสื้อวิลล่าลงโซเชียล",
+    content: `อเลฮานโดร การ์นาโช่ ปีกเด็กปั้น แมนเชสเตอร์ ยูไนเต็ด โพสต์โซเชียลรูปตัวเองใส่เสื้อ แอสตัน วิลล่า เบอร์ 9 ของ มาร์คัส แรชฟอร์ด
+      สุดสัปดาห์ที่ผ่านมา การ์นาโช่ ลงไอจีอัลบั้มภาพทริปพักร้อนที่สเปน ซึ่งหนึ่งในนั้นคือรูปใส่เสื้อเหย้า "สิงห์ผงาด" หันหลังให้กล้อง โดยมีรถเฟอร์รารี่ กับ ลัมโบร์กินี่ เป็นแบ็คกราวน์
+      แข้งอาร์เจนไตน์วัย 20 ปี เหลือสัญญาถึง 2028 แต่กำลังตกเป็นข่าวย้ายออก "ปีศาจแดง" เพราะไม่อยู่ในแผน รูเบน อโมริม
+      อย่างไรก็ตาม แหล่งข่าวของ บีบีซี สื่ออังกฤษระบุ โพสต์ล่าสุด การ์นาโช่ ไม่เกี่ยวกับดีลย้ายไป วิลล่า แต่อย่างใด โดยแค่ต้องการสนับสนุน แรชฟอร์ด เท่านั้น
+      แรชฟอร์ด อีกหนึ่งแนวรุกลูกหม้อ เหลือสัญญาถึง 2028 เช่นกัน แต่ก็กำลังเจอสถานการณ์อนาคตไม่แน่นอน ภายหลังเพิ่งจบการยืมตัวที่ วิลล่า ปาร์ค
+      "น้องชายผมเอง" แรชฟอร์ด ดาวเตะอังกฤษวัย 27 ปี โผล่ไปคอมเมนต์ใต้โพสต์ พร้อมอีโมจีรูปหัวใจ
+      `,
     authorId: "user4",
     categoryId: "cat6",
     createdAt: new Date("2024-01-11"),
     updatedAt: new Date("2024-01-11"),
-    images: ["/placeholder.svg?height=350&width=550"],
+    images: ["/images/FInlp4f.png"],
     likes: 55,
+    source: [
+      "https://www.instagram.com/p/DLNmYRVNiyc/?utm_source=ig_embed&ig_rid=792743de-d527-450f-9c7d-04ab00c26b06",
+    ],
   },
   {
     id: "post8",
-    title: "Building a REST API with Node.js",
-    content:
-      "Step-by-step guide to building a RESTful API using Node.js and Express. We'll cover routing, middleware, error handling, and database integration.",
+    title: "'ไคเซโด้' ปลุกสิงห์คืนฟอร์มนัดสุดท้ายรอบแบ่งกลุ่ม",
+    content: `
+      มอยเซส ไคเซโด้ กองกลางของเชลซี ปลุกเพื่อนร่วมทีมต้องงัดฟอร์มออกมาให้ได้ในเกมหน้าหลังพลิกพ่าย ฟลาเมงโก้ 1-3 ในศึกคลับ เวิลด์ คัพ รอบแบ่งกลุ่ม เมื่อคืนนี้
+      แม้ได้ประตูนำก่อนจากเปโดร เนโต้ แต่ "สิงห์บลูส์" ครองเกมไม่ได้แล้วโดนทีมจากแดนแซมบ้า ไล่ยิงแซงชนะในครึ่งหลัง
+      ไม่เท่านั้น ทีมของเอ็นโซ่ มาเรสก้า เหลือนักเตะเพียง 10 คน ภายหลังจากนิโคลัส แจ็คสัน โดนไบแดงไล่ออกจากสนามด้วย
+      มิดฟิลด์เอกวาดอร์ กล่าวว่า "คุณต้องมีสมาธิตลอดทั้งเกมเพราะเพียงแค่คุณปิดสวิตช์เพียงวินาทีเดียว เรื่องแบบนี้มันก็เกิดขึ้นได้เลย"
+      "เราจำเป็นต้องตอบโต้ ตอนนี้เราโฟกัสไปกับเกมหน้า มันจะเป็นเกมยาก แต่เราก็จะเตรียมพร้อมตั้งแต่วันพรุ่งนี้"
+      "ในครึ่งหลังนั้น พวกเขาเล่นดีขึ้นมาก พวกเขาเพรสได้ดีขึ้น เราโฟกัสหาพื้นที่ว่าง แต่แน่นอนว่ามันยาก"
+      "ทีมกำลังเล่นได้ดี แต่คุณจำเป็นต้องมีสมาธิตลอด 95 นาที หากไม่แล้ว คุณอาจแพ้เกมไปเลยเมื่อเสียสมาธิไปวินาทีเดียว"
+      ทั้งนี้ ตัวแทนจากพรีเมียร์ลีกมี 3 คะแนน และจะลงสนามพบเอสเปรานซ์ เดอ ทูนิส ทีมจากตูนีเซีย ในเกมนัดสุดท้ายของรอบแบ่งกลุ่ม
+      `,
     authorId: "user5",
     categoryId: "cat5",
     createdAt: new Date("2024-01-12"),
     updatedAt: new Date("2024-01-12"),
-    images: [],
+    images: ["/images/Gt4vEHEXQAALcom.jpg"],
     likes: 3,
   },
   {
     id: "post9",
-    title: "UI/UX Design Trends for 2024",
-    content:
-      "What design trends are you seeing this year? I've noticed a lot more minimalist designs and interesting use of gradients. What's your take?",
+    title: "'โอบี มิเกล' สับสิงห์ไร้ผู้นำ",
+    content: `จอห์น โอบี มิเกล อดีตกองกลางของเชลซี วิจารณ์ทีมของรุ่นน้องไม่มีความเป็นผู้นำ ระหว่างพ่าย ฟลาเมงโก้ 1-3 ศึกฟีฟ่า คลับ เวิลด์ คัพ
+      "สิงห์บลูส์" พลิกล็อคปราชัยทีมจากแดนกาแฟ หลังโดนยิงแซงในช่วงครึ่งหลัง โดยพวกเขาเหลือนักเตะ 10 คน จากกรณีนิโคลัส แจ็คสัน โดนไล่ออก
+      โอบี มิเกล กล่าวว่า "เมื่อคุณพูดถึงพวกผู้นำ คนที่สามารถอยู่ในสนามและคอนโทรลเกมรวมถึงเพื่อนร่วมทีมได้"
+      "นี่คือสิ่งที่เชลซี เคยมีอย่างตอนที่นักเตะแบบจอห์น เทอร์รี่ และดิดิเย่ร์ ดร็อกบา อยู่กับสโมสร"
+      "ผู้คนที่สามารถเรียกบรรดานักเตะรอบข้างมาแล้วบอกว่า "ฟังนะ ใจเย็นลงหน่อยพวก"
+      "แต่ผมไม่เห็นอะไรแบบนั้นเลยที่นี่ ผมไม่เห็นบรรดาผู้นำ ผมเห็นแค่พวกนักเตะที่กำลังก่อความผิดพลาด"
+      "จากนั้นนิโคลัส แจ็คสัน ก็ลงมาแล้วโดนใบแดง มันยิ่งทำให้จากย่ำแย่เป็นเลวร้ายเลยแหล่ะ"
+      `,
     authorId: "user6",
     categoryId: "cat6",
     createdAt: new Date("2024-01-13"),
     updatedAt: new Date("2024-01-13"),
-    images: [
-      "/placeholder.svg?height=300&width=600",
-      "/placeholder.svg?height=400&width=500",
-    ],
+    images: ["/images/obi_mikel.avif"],
     likes: 29,
   },
   {
     id: "post10",
-    title: "Database optimization tips",
-    content:
-      "Sharing some database optimization techniques I've learned. These have helped improve query performance significantly in my projects.",
+    title: "ลือสิงห์ชั่งใจปล่อย 'แจ๊คสัน' พ้นทีม-ม้าลาย,นาโปลีถกตัวแทน",
+    content: `สื่อจากอิตาลีรายงานว่า เชลซี พิจารณาที่จะปล่อย นิโคลัส แจ๊คสัน ออกจากทีม ทำให้ ยูเวนตุส และ นาโปลี ต่างติดต่อตัวแทนของนักเตะเพื่อเริ่มต้นพูดคุยเบื้องต้น
+      แจ๊คสัน เพิ่งโดนเสียงวิจารณ์มาสดๆร้อนๆ กับการโดนใบแดงอีกครั้งแม้เพิ่งลงสนามได้แค่ 4 นาทีในเกมที่ เชลซี พ่ายต่อ ฟลาเมนโก้ เมื่อคืนวันศุกร์ที่ผ่านมา
+      แล้วข่าวจาก จานลูก้า ดิ มาร์ซิโอ ระบุว่า เชลซี ไม่ได้มองเขาเป็นนักเตะที่แตะต้องไม่ได้อีกต่อไป และกำลังพิจารณาถึงการปล่อยเขาออกจากทีม
+      นอกเหนือจากนี้ ยูเวนตุส ยังได้เริ่มต้นการพูดคุยแล้วเพื่อศึกษาความเป็นไปได้ในการคว้าดาวเตะวัย 24 ปีไปร่วมทีม
+      แจ๊คสัน ย้ายจาก บีญาร์เรอัล มาอยู่กับ เชลซี ตั้งแต่ปี 2023 ด้วยค่าตัว 32 ล้านปอนด์และผ่านการทำไป 30 ประตูจากการลงสนาม 80 เกม
+      ยูเวนตุส ต้องการกองหน้าคนใหม่แต่พวกเขาจำเป็นต้องหาทางปล่อย ดูซาน วลาโฮวิช ออกจากทีมก่อน
+      กลับกัน นาโปลี หมายตา โลเรนโซ่ ลุคก้า และ ดาร์วิน นูนเญซ ไว้มากกว่าแต่พวกเขายังขอข้อมูลเกี่ยวกับอนาคต แจ๊คสัน ผ่านทางตัวแทนนักเตะ
+      รายงานก่อนหน้านี้ระบุว่า นาโปลี พร้อมที่จะยื่นข้อเสนอมากกว่า 40 ล้านยูโรเพื่อแลกกับ นูนเญซ ที่เป็นเป้าหมายหลักสำหรับการเติมแดนหน้า
+      `,
     authorId: "user7",
     categoryId: "cat2",
     createdAt: new Date("2024-01-14"),
     updatedAt: new Date("2024-01-14"),
-    images: [],
+    images: ["/images/0_Nicolas-Jackson.jpg"],
     likes: 47,
   },
 ];
