@@ -1,5 +1,6 @@
 "use client";
 
+import CommentSection from "@/components/comments/CommentSection";
 import PostDetail from "@/components/post/PostDetail";
 import { Skeleton } from "@/components/ui/skeleton";
 import { mockPosts, Post } from "@/lib/prisma";
@@ -61,7 +62,7 @@ export default function GlobalNewsPage({
 
       <div className="mt-8">
         <Suspense fallback={<CommentSkeleton />}>
-          {/* <CommentSection postId={resolvedParams.id} /> */}
+          <CommentSection postId={resolvedParams.id} />
         </Suspense>
       </div>
     </main>

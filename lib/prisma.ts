@@ -412,7 +412,7 @@ export const mockPosts: Post[] = [
     path: "/board/global-news",
   },
   {
-    id: "post7",
+    id: "post3",
     title: "หนุนหลังพี่แรช! 'การ์นาโช่' ใส่เสื้อวิลล่าลงโซเชียล",
     content: `อเลฮานโดร การ์นาโช่ ปีกเด็กปั้น แมนเชสเตอร์ ยูไนเต็ด โพสต์โซเชียลรูปตัวเองใส่เสื้อ แอสตัน วิลล่า เบอร์ 9 ของ มาร์คัส แรชฟอร์ด
       สุดสัปดาห์ที่ผ่านมา การ์นาโช่ ลงไอจีอัลบั้มภาพทริปพักร้อนที่สเปน ซึ่งหนึ่งในนั้นคือรูปใส่เสื้อเหย้า "สิงห์ผงาด" หันหลังให้กล้อง โดยมีรถเฟอร์รารี่ กับ ลัมโบร์กินี่ เป็นแบ็คกราวน์
@@ -434,7 +434,7 @@ export const mockPosts: Post[] = [
     path: "/board/global-news",
   },
   {
-    id: "post8",
+    id: "post4",
     title: "'ไคเซโด้' ปลุกสิงห์คืนฟอร์มนัดสุดท้ายรอบแบ่งกลุ่ม",
     content: `
       มอยเซส ไคเซโด้ กองกลางของเชลซี ปลุกเพื่อนร่วมทีมต้องงัดฟอร์มออกมาให้ได้ในเกมหน้าหลังพลิกพ่าย ฟลาเมงโก้ 1-3 ในศึกคลับ เวิลด์ คัพ รอบแบ่งกลุ่ม เมื่อคืนนี้
@@ -456,7 +456,7 @@ export const mockPosts: Post[] = [
     path: "/board/global-news",
   },
   {
-    id: "post9",
+    id: "post5",
     title: "'โอบี มิเกล' สับสิงห์ไร้ผู้นำ",
     content: `จอห์น โอบี มิเกล อดีตกองกลางของเชลซี วิจารณ์ทีมของรุ่นน้องไม่มีความเป็นผู้นำ ระหว่างพ่าย ฟลาเมงโก้ 1-3 ศึกฟีฟ่า คลับ เวิลด์ คัพ
       "สิงห์บลูส์" พลิกล็อคปราชัยทีมจากแดนกาแฟ หลังโดนยิงแซงในช่วงครึ่งหลัง โดยพวกเขาเหลือนักเตะ 10 คน จากกรณีนิโคลัส แจ็คสัน โดนไล่ออก
@@ -476,7 +476,7 @@ export const mockPosts: Post[] = [
     path: "/board/global-news",
   },
   {
-    id: "post10",
+    id: "post6",
     title: "ลือสิงห์ชั่งใจปล่อย 'แจ๊คสัน' พ้นทีม-ม้าลาย,นาโปลีถกตัวแทน",
     content: `สื่อจากอิตาลีรายงานว่า เชลซี พิจารณาที่จะปล่อย นิโคลัส แจ๊คสัน ออกจากทีม ทำให้ ยูเวนตุส และ นาโปลี ต่างติดต่อตัวแทนของนักเตะเพื่อเริ่มต้นพูดคุยเบื้องต้น
       แจ๊คสัน เพิ่งโดนเสียงวิจารณ์มาสดๆร้อนๆ กับการโดนใบแดงอีกครั้งแม้เพิ่งลงสนามได้แค่ 4 นาทีในเกมที่ เชลซี พ่ายต่อ ฟลาเมนโก้ เมื่อคืนวันศุกร์ที่ผ่านมา
@@ -497,7 +497,7 @@ export const mockPosts: Post[] = [
     path: "/board/global-news",
   },
   {
-    id: "post11",
+    id: "post7",
     title: "'ป็อกบา' ดีลโมนาโกฉลุยเตรียมเซ็นสัญญา 2 ปี",
     content: `
     ปอล ป็อกบา ใกล้ที่จะได้กลับสู่วงการฟุตบอลอาชีพอีกครั้งด้วยหลังตอบตกลงสัญญา 2 ปีกับ โมนาโก
@@ -519,7 +519,7 @@ export const mockPosts: Post[] = [
     path: "/board/global-news",
   },
   {
-    id: "post12",
+    id: "post8",
     title: "พร้อมลุย! ‘อิเคดะ’ ยันเป้าหมายพา ชบาแก้ว เข้ารอบสุดท้ายเอเชีย",
     content: `
     “อิเคดะ” แถลง ชบาแก้ว พร้อมลุยศึกชิงแชมป์เอเชีย 2026 รอบคัดเลือก ที่เชียงใหม่ เตรียมดูฟอร์มคู่แข่งนัดแรก เพื่อให้พร้อมที่สุด ยันเป้าหมายเข้ารอบสุดท้ายให้ได้
@@ -549,7 +549,7 @@ export const mockPosts: Post[] = [
 ];
 
 // Comments with like counts
-const mockComments: Comment[] = [
+export const mockComments: Comment[] = [
   {
     id: "comment1",
     content: "Great post! Looking forward to more content.",
@@ -643,7 +643,7 @@ const mockComments: Comment[] = [
     id: "comment10",
     content:
       "This is exactly what I needed! Do you have any recommendations for authentication middleware?",
-    authorId: "user6",
+    authorId: "user2",
     postId: "post8",
     likes: 7,
     createdAt: new Date("2024-01-12T10:45:00"),
@@ -653,8 +653,8 @@ const mockComments: Comment[] = [
     id: "comment11",
     content:
       "Love the minimalist trend! Clean designs are so much easier to navigate.",
-    authorId: "user4",
-    postId: "post9",
+    authorId: "user2",
+    postId: "post2",
     likes: 11,
     createdAt: new Date("2024-01-13T16:30:00"),
     updatedAt: new Date("2024-01-13T16:30:00"),
@@ -663,8 +663,8 @@ const mockComments: Comment[] = [
     id: "comment12",
     content:
       "Indexing strategies are crucial! Have you tried using query execution plans to identify bottlenecks?",
-    authorId: "user8",
-    postId: "post10",
+    authorId: "user5",
+    postId: "post1",
     likes: 1,
     createdAt: new Date("2024-01-14T11:15:00"),
     updatedAt: new Date("2024-01-14T11:15:00"),
@@ -673,7 +673,7 @@ const mockComments: Comment[] = [
     id: "comment13",
     content: "Thanks for the welcome! Excited to be part of this community.",
     authorId: "user4",
-    postId: "post1",
+    postId: "post4",
     likes: 14,
     createdAt: new Date("2024-01-05T14:20:00"),
     updatedAt: new Date("2024-01-05T14:20:00"),
@@ -682,7 +682,7 @@ const mockComments: Comment[] = [
     id: "comment14",
     content:
       "Another great extension is Live Server for quick development previews.",
-    authorId: "user7",
+    authorId: "user2",
     postId: "post5",
     likes: 13,
     createdAt: new Date("2024-01-09T18:10:00"),
@@ -692,7 +692,7 @@ const mockComments: Comment[] = [
     id: "comment15",
     content:
       "Join coding communities and find accountability partners. It really helps!",
-    authorId: "user8",
+    authorId: "user1",
     postId: "post6",
     likes: 0,
     createdAt: new Date("2024-01-10T20:30:00"),

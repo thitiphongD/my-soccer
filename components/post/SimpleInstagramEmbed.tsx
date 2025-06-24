@@ -21,7 +21,6 @@ export function SimpleInstagramEmbed({
         height={height}
         frameBorder="0"
         scrolling="no"
-        allowTransparency
         className="rounded-lg"
         title={`Instagram post ${postId}`}
         loading="lazy"
