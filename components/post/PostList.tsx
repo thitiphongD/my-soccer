@@ -10,6 +10,7 @@ type PostWithRelations = {
   title: string;
   content: string;
   images?: string[];
+  imageTitle: string;
   authorId: string;
   likes: number;
   createdAt: Date;

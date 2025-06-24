@@ -36,6 +36,7 @@ const PRISON_EXPIRY = new Map([
   ["4", new Date(Date.now() + 21 * 24 * 60 * 60 * 1000)], // 21 days from now
 ])
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function getEffectiveRank(user: any): UserRank {
   const totalLikes = user.totalLikes || 0
   const isPrisoner = user.isPrisoner || isPrisonUser(user.id)
@@ -61,6 +62,7 @@ export function getPrisonExpiryDate(userId: string): Date | null {
   return PRISON_EXPIRY.get(userId) || null
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function getPrisonExpiry(user: any): PrisonExpiry {
   const userId = user.id
   const expiryDate = getPrisonExpiryDate(userId)
@@ -135,6 +137,7 @@ export function shouldShowPrisonWarning(userId: string, totalLikes: number): boo
   return status.isPrisoner
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function getPrisonWarning(user: any): string | null {
   const userId = user.id
   const totalLikes = user.totalLikes || 0
@@ -170,6 +173,7 @@ export function getPrisonWarning(user: any): string | null {
   return "You are currently in prison rank."
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function getPrisonLoginAlert(user: any): {
   show: boolean
   title: string

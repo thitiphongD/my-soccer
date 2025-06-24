@@ -23,25 +23,25 @@ export default function Navbar() {
       <div className="container mx-auto p-2">
         <div className="flex items-center justify-between">
           <Link href="/">
-            <h1 className="text-2xl font-bold text-primary">Soccerssex</h1>
+            <h1 className="text-xl md:text-2xl font-bold text-primary">Soccerssex</h1>
           </Link>
           <div className="flex items-center gap-4">
             <div className="flex gap-2">
-              <Input type="text" placeholder="Search" className="w-72 "   />
+              <Input type="text" placeholder="Search" className="hidden md:block w-72 text-sm h-8"   />
               <ThemeToggle />
               {user ? (
                 <>
                   {/* <CreatePostButton /> */}
                   {user.role === "ADMIN" && (
                     <Button asChild variant="outline">
-                      <Link href="/admin">Admin</Link>
+                      <Link href="/admin" className="text-xs md:text-sm">Admin</Link>
                     </Button>
                   )}
 
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                       <Avatar className="w-8 h-8 cursor-pointer">
-                        <AvatarFallback>
+                        <AvatarFallback className="text-xs md:text-sm">
                           {user.email?.charAt(0).toUpperCase()}
                         </AvatarFallback>
                       </Avatar>
@@ -77,10 +77,10 @@ export default function Navbar() {
                 </>
               ) : (
                 <div className="flex gap-2">
-                  <Button asChild variant="outline">
+                  <Button asChild variant="outline" size="sm">
                     <Link href="/auth/login">Login</Link>
                   </Button>
-                  <Button asChild>
+                  <Button asChild size="sm">
                     <Link href="/auth/register">Register</Link>
                   </Button>
                 </div>

@@ -1,4 +1,5 @@
 import CategoryFilter from "@/components/CategoryFilter";
+import Footer from "@/components/layouts/Footer";
 import Navbar from "@/components/layouts/Navbar";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -22,6 +23,7 @@ export default function MainLayout({
           </div>
         </div>
       </main>
+      <Footer />
     </>
   );
 }

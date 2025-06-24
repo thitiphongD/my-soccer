@@ -15,6 +15,7 @@ interface PostCardProps {
     content: string;
     images?: string[];
     path: string;
+    imageTitle: string;
     authorId: string;
     likes: number;
     createdAt: Date;
@@ -61,7 +62,7 @@ export default function PostCard({
   if (index !== undefined && index >= 5) {
     return (
       <motion.div
-        className="hover:shadow-md transition-shadow flex flex-col gap-2"
+        className="hover:shadow-md transition-shadow flex flex-col gap-2 px-2"
         variants={cardVariants}
         initial="hidden"
         animate="visible"
@@ -72,7 +73,7 @@ export default function PostCard({
           <div className="flex flex-row gap-4">
             <Link
               href={createAbsoluteUrl(`/${post.path}/${post.id}`)}
-              className="text-lg font-semibold hover:text-primary transition-colors"
+              className="text-xs md:text-lg font-semibold hover:text-primary transition-colors"
             >
               {post.title}
             </Link>
@@ -80,7 +81,7 @@ export default function PostCard({
               {post.major}
             </Badge>
           </div>
-          <div>
+          <div className="hidden md:block">
             <p className="text-xs text-muted-foreground">
               {formatDistanceToNow(post.createdAt, { addSuffix: true })}
             </p>
@@ -95,7 +96,7 @@ export default function PostCard({
       <motion.div variants={cardVariants} initial="hidden" animate="visible">
         <Card className="hover:shadow-md transition-shadow h-fit">
           <CardHeader>
-            <div className="flex gap-4">
+            <div className="flex flex-col md:flex-row gap-4">
               {post.images && post.images.length > 0 && (
                 <motion.div
                   className="flex-shrink-0"
@@ -104,11 +105,11 @@ export default function PostCard({
                   transition={{ duration: 0.6, delay: 0.2 }}
                 >
                   <Image
-                    src={post.images[0] || "/placeholder.svg"}
+                    src={post.imageTitle || "/placeholder.svg"}
                     alt={`${post.title} preview`}
                     width={400}
                     height={400}
-                    className="w-48 h-36 md:w-[600px] md:h-[400px] rounded border"
+                    className="w-full h-64 md:w-[600px] md:h-[400px] rounded border object-cover"
                   />
                 </motion.div>
               )}
@@ -184,25 +185,22 @@ export default function PostCard({
 
   return (
     <motion.div variants={cardVariants} initial="hidden" animate="visible">
-      <Card className="hover:shadow-md transition-shadow h-fit">
-        <CardHeader className="pb-3">
-          <div className="flex gap-2">
-            {post.images && post.images.length > 0 && (
-              <motion.div
-                className="flex-shrink-0"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-              >
-                <Image
-                  src={post.images[0] || "/placeholder.svg"}
-                  alt={`${post.title} preview`}
-                  width={150}
-                  height={150}
-                  className="w-32 h-32 object-cover rounded border"
-                />
-              </motion.div>
-            )}
+      <Card className="hover:shadow-md transition-shadow h-fit p-4">
+      <div className="flex gap-2">
+            <motion.div
+              className="flex-shrink-0"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <Image
+                src={post.imageTitle || "/placeholder.svg"}
+                alt={`${post.title} preview`}
+                width={150}
+                height={150}
+                className="w-32 h-32 object-cover rounded border"
+              />
+            </motion.div>
             <motion.div
               className="flex-1"
               initial={{ opacity: 0, x: 10 }}
@@ -214,23 +212,14 @@ export default function PostCard({
                   href={createAbsoluteUrl(`/${post.path}/${post.id}`)}
                   className="text-lg font-semibold hover:text-primary transition-colors"
                 >
-                  {post.title.substring(0, 30)}...
+                  {post.title.substring(0, 40)}...
                 </Link>
-                {post.category && (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.3, delay: 0.3 }}
-                  >
-                    <Badge variant="secondary">{post.major}</Badge>
-                  </motion.div>
-                )}
               </div>
               <p className="text-sm text-muted-foreground mt-1 line-clamp-3">
                 {post.content.substring(0, 120)}...
               </p>
               <motion.div
-                className="flex items-center gap-4 justify-end mt-2"
+                className="flex items-center gap-4 justify-end mt-2 hidden md:flex"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
@@ -250,10 +239,10 @@ export default function PostCard({
                     {post._count.comments} comments
                   </span>
                 </div>
+                <Badge variant="secondary">{post.major}</Badge>
               </motion.div>
             </motion.div>
           </div>
-        </CardHeader>
       </Card>
     </motion.div>
   );
