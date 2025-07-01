@@ -28,7 +28,7 @@ export default function CategoryFilter() {
   return (
     <>
       {/* Mobile Select - visible only on mobile */}
-      <div className="block md:hidden">
+      <div className="block md:hidden px-2">
         <Select
           value={currentCategory?.id || ""}
           onValueChange={handleSelectChange}

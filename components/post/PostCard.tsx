@@ -62,7 +62,7 @@ export default function PostCard({
   if (index !== undefined && index >= 5) {
     return (
       <motion.div
-        className="hover:shadow-md transition-shadow flex flex-col gap-2 px-2"
+        className="hover:shadow-md transition-shadow flex flex-col gap-2 p-1 border-b last:border-b-0"
         variants={cardVariants}
         initial="hidden"
         animate="visible"
@@ -73,7 +73,7 @@ export default function PostCard({
           <div className="flex flex-row gap-4">
             <Link
               href={createAbsoluteUrl(`/${post.path}/${post.id}`)}
-              className="text-xs md:text-lg font-semibold hover:text-primary transition-colors"
+              className="text-xs md:text-sm font-semibold hover:text-primary transition-colors"
             >
               {post.title}
             </Link>
@@ -186,63 +186,63 @@ export default function PostCard({
   return (
     <motion.div variants={cardVariants} initial="hidden" animate="visible">
       <Card className="hover:shadow-md transition-shadow h-fit p-4">
-      <div className="flex gap-2">
+        <div className="flex gap-2">
+          <motion.div
+            className="flex-shrink-0"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            <Image
+              src={post.imageTitle || "/placeholder.svg"}
+              alt={`${post.title} preview`}
+              width={150}
+              height={150}
+              className="w-32 h-32 object-cover rounded border"
+            />
+          </motion.div>
+          <motion.div
+            className="flex-1"
+            initial={{ opacity: 0, x: 10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <div className="flex items-start justify-between">
+              <Link
+                href={createAbsoluteUrl(`/${post.path}/${post.id}`)}
+                className="text-lg font-semibold hover:text-primary transition-colors"
+              >
+                {post.title.substring(0, 40)}...
+              </Link>
+            </div>
+            <p className="text-sm text-muted-foreground mt-1 line-clamp-3">
+              {post.content.substring(0, 120)}...
+            </p>
             <motion.div
-              className="flex-shrink-0"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
+              className="flex items-center gap-4 justify-end mt-2 hidden md:flex"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <Image
-                src={post.imageTitle || "/placeholder.svg"}
-                alt={`${post.title} preview`}
-                width={150}
-                height={150}
-                className="w-32 h-32 object-cover rounded border"
-              />
-            </motion.div>
-            <motion.div
-              className="flex-1"
-              initial={{ opacity: 0, x: 10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <div className="flex items-start justify-between">
+              <div className="flex items-center gap-1">
+                <User className="h-3 w-3 text-muted-foreground" />
                 <Link
-                  href={createAbsoluteUrl(`/${post.path}/${post.id}`)}
-                  className="text-lg font-semibold hover:text-primary transition-colors"
+                  href={createAbsoluteUrl(`/profile/${post.author.id}`)}
+                  className="hover:text-primary transition-colors text-xs truncate max-w-20 text-muted-foreground"
                 >
-                  {post.title.substring(0, 40)}...
+                  {post.author.name ?? post.author.email}
                 </Link>
               </div>
-              <p className="text-sm text-muted-foreground mt-1 line-clamp-3">
-                {post.content.substring(0, 120)}...
-              </p>
-              <motion.div
-                className="flex items-center gap-4 justify-end mt-2 hidden md:flex"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-              >
-                <div className="flex items-center gap-1">
-                  <User className="h-3 w-3 text-muted-foreground" />
-                  <Link
-                    href={createAbsoluteUrl(`/profile/${post.author.id}`)}
-                    className="hover:text-primary transition-colors text-xs truncate max-w-20 text-muted-foreground"
-                  >
-                    {post.author.name ?? post.author.email}
-                  </Link>
-                </div>
-                <div className="flex items-center gap-1">
-                  <MessageCircle className="h-3 w-3 text-muted-foreground" />
-                  <span className="text-xs text-muted-foreground">
-                    {post._count.comments} comments
-                  </span>
-                </div>
-                <Badge variant="secondary">{post.major}</Badge>
-              </motion.div>
+              <div className="flex items-center gap-1">
+                <MessageCircle className="h-3 w-3 text-muted-foreground" />
+                <span className="text-xs text-muted-foreground">
+                  {post._count.comments} comments
+                </span>
+              </div>
+              <Badge variant="secondary">{post.major}</Badge>
             </motion.div>
-          </div>
+          </motion.div>
+        </div>
       </Card>
     </motion.div>
   );

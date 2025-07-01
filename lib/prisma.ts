@@ -246,6 +246,13 @@ export const mockCategories: Category[] = [
     icon: "Table",
   },
   {
+    id: "cat-p",
+    name: "โพล",
+    description: "โพล",
+    path: "/poll",
+    icon: "List",
+  },
+  {
     id: "cat1",
     name: "ผลบอลย้อนหลัง",
     description: "ผลบอลย้อนหลัง",

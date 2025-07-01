@@ -3,7 +3,6 @@
 import { MAJOR_ENUM, prisma } from "@/lib/prisma";
 import PostCard from "./PostCard";
 import { useState, useEffect } from "react";
-import { ScrollArea } from "../ui/scroll-area";
 
 type PostWithRelations = {
   id: string;
@@ -74,26 +73,23 @@ export default function PostList() {
     );
   }
   return (
-    <ScrollArea className="h-[calc(105vh-10rem)]">
-      <div>
-        {/* Grid layout for first 5 cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-          {posts.slice(0, 5).map((post, index) => (
-            <div key={post.id} className={index === 0 ? "col-span-full" : ""}>
-              <PostCard post={post} isFirstCard={index === 0} index={index} />
-            </div>
+    <>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+        {posts.slice(0, 5).map((post, index) => (
+          <div key={post.id} className={index === 0 ? "col-span-full" : ""}>
+            <PostCard post={post} isFirstCard={index === 0} index={index} />
+          </div>
+        ))}
+      </div>
+
+      {/* Vertical list for cards from index 5 onwards */}
+      {posts.length > 5 && (
+        <div className="flex flex-col gap-2">
+          {posts.slice(5).map((post, index) => (
+            <PostCard key={post.id} post={post} index={index + 5} />
           ))}
         </div>
-
-        {/* Vertical list for cards from index 5 onwards */}
-        {posts.length > 5 && (
-          <div className="flex flex-col gap-2">
-            {posts.slice(5).map((post, index) => (
-              <PostCard key={post.id} post={post} index={index + 5} />
-            ))}
-          </div>
-        )}
-      </div>
-    </ScrollArea>
+      )}
+    </>
   );
 }
